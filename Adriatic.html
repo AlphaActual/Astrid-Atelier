@@ -98,8 +98,14 @@
     <!-- Custom CSS to move reCAPTCHA badge -->
     <style>
       .grecaptcha-badge {
-        bottom: 105px !important;
-        z-index: 999 !important;
+        width: 70px !important;
+        overflow: hidden !important;
+        transition: all 0.3s ease !important;
+        left: 4px !important;
+      }
+
+      .grecaptcha-badge:hover {
+        width: 256px !important;
       }
     </style>
   </head>
@@ -406,7 +412,7 @@
           <!-- contact form column -->
           <div class="col my-5 my-md-0 my-xxl-5">
             <h2 class="text-white text-center font-Caveat mb-4">Contact us!</h2>
-            <form method="post" action="process.php">
+            <form method="post" id="form" action="process.php">
               <div class="row">
                 <div class="col-md-6 mb-2">
                   <label for="name" class="text-white">Name</label>
@@ -459,11 +465,13 @@
               </div>
               <div class="row my-4">
                 <div class="col">
-                  <div
-                    class="g-recaptcha"
+                  <button
+                    type="submit"
+                    class="g-recaptcha btn btn-primary buttonShadow"
                     data-sitekey="6LfNPagqAAAAAAynty4AICwDIc5PzurGjwcDaIUx"
-                  ></div>
-                  <button type="submit" class="btn btn-primary buttonShadow">
+                    data-callback="onSubmit"
+                    data-action="submit"
+                  >
                     Send
                   </button>
                 </div>

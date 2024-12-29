@@ -98,8 +98,14 @@
     <!-- Custom CSS to move reCAPTCHA badge -->
     <style>
       .grecaptcha-badge {
-        bottom: 105px !important;
-        z-index: 999 !important;
+        width: 70px !important;
+        overflow: hidden !important;
+        transition: all 0.3s ease !important;
+        left: 4px !important;
+      }
+
+      .grecaptcha-badge:hover {
+        width: 256px !important;
       }
     </style>
   </head>
@@ -685,12 +691,14 @@
               </div>
               <div class="row my-4">
                 <div class="col">
-                  <div
-                    class="g-recaptcha"
+                  <button
+                    type="submit"
+                    class="g-recaptcha btn btn-primary buttonShadow"
                     data-sitekey="6LfNPagqAAAAAAynty4AICwDIc5PzurGjwcDaIUx"
-                  ></div>
-                  <button type="submit" class="btn btn-primary buttonShadow">
-                    Send
+                    data-callback="onSubmit"
+                    data-action="submit"
+                  >
+                    Pošalji
                   </button>
                 </div>
               </div>

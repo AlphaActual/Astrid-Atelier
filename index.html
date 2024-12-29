@@ -87,8 +87,14 @@
     <!-- Custom CSS to move reCAPTCHA badge -->
     <style>
       .grecaptcha-badge {
-        bottom: 105px !important;
-        z-index: 999 !important;
+        width: 70px !important;
+        overflow: hidden !important;
+        transition: all 0.3s ease !important;
+        left: 4px !important;
+      }
+
+      .grecaptcha-badge:hover {
+        width: 256px !important;
       }
     </style>
     <!-- TODO dodati id form na sve forme u updejtati submit button kao na index page-u -->
